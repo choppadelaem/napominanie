@@ -1,11 +1,14 @@
 import urllib.request
 import json
 import time
+import os
 from datetime import datetime
 
 # ===== НАСТРОЙКИ =====
-TOKEN = "8708579784:AAGyuQZw2zDGhzLFivf45CHfGmVkG5Fo7Yg"
-CHAT_ID = "1435830704"
+TOKEN = os.getenv("TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
+if not TOKEN or not CHAT_ID:
+    raise ValueError("TOKEN или CHAT_ID не заданы в переменных окружения")
 # ======================
 
 # ---------- Список команд ----------
